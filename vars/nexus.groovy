@@ -16,7 +16,7 @@ def make_artifacts(COMPONENT) {
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
     } else if(COMPONENT == "login1") {
-        command="zip -r ${COMPONENT}.zip"
+        command="zip -r ${COMPONENT}.zip main.go user.go tracing.go"
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
     } else if(COMPONENT == "users") {
@@ -24,7 +24,7 @@ def make_artifacts(COMPONENT) {
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
     } else if(COMPONENT == "todo1") {
-        command="zip -r ${COMPONENT}.zip"
+        command="zip -r ${COMPONENT}.zip node_modules server.js"
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
     }
@@ -40,7 +40,7 @@ def code_build(COMPONENT) {
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
     }  else if(COMPONENT == "login1") {
-        command = "go build"
+        command = "go build main.go user.go tracing.go"
         def execute_com=sh(returnStdout: true, script: command)
     }  else if(COMPONENT == "todo1") {
         command = "npm install && npm i nodemon && npm link nodemon"
