@@ -43,7 +43,7 @@ def code_build(COMPONENT) {
         command = " go get github.com/openzipkin/zipkin-go && go get github.com/openzipkin/zipkin-go/middleware/http &&go get github.com/openzipkin/zipkin-go/reporter/http && go get github.com/labstack/echo && go get github.com/labstack/echo/middleware &&go get github.com/labstack/gommon/log && go build main.go user.go tracing.go"
         def execute_com=sh(returnStdout: true, script: command)
     }  else if(COMPONENT == "todo1") {
-        command = "npm install && npm i nodemon && npm link nodemon"
+        command = "npm install"
         def execute_com=sh(returnStdout: true, script: command)
     }
 }
