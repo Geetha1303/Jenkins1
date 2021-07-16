@@ -15,7 +15,6 @@ def call(Map params = [:]) {
             NEXUS_IP="${args.NEXUS_IP}"
             PROJECT_NAME="${args.PROJECT_NAME}"
             SLAVE_LABEL="${args.SLAVE_LABEL}"
-            APP_TYPE="${args.APP_TYPE}"
         }
         stages {
             stage('code build & install dependencies') {
@@ -30,7 +29,7 @@ def call(Map params = [:]) {
                 steps{
                     script{
                         prepare=new nexus()
-                        prepare.make_artifacts("${APP_TYPE}", "${COMPONENT}")
+                        prepare.make_artifacts("${COMPONENT}")
                     }
                 }
             }
