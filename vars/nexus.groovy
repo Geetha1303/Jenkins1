@@ -15,11 +15,11 @@ def make_artifacts(APP_TYPE, COMPONENT) {
         command="zip -r ${FILENAME} .*"
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
-    } else if(COMPONENT == "login1") {
+    } else if(APP_TYPE == "GOLANG") {
         command="zip -r ${FILENAME} main.go user.go tracing.go"
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
-    } else if(COMPONENT == "users") {
+    } else if(APP_TYPE == "JAVA") {
         command="cp target/*.jar ${COMPONENT}.jar && zip -r ${FILENAME} ${COMPONENT}.jar"
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
