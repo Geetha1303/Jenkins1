@@ -12,7 +12,7 @@ def make_artifacts(COMPONENT) {
    // def get_branch_exec=sh(returnStdout: true, script:get_branch)
    // def FILENAME=COMPONENT+'-'+get_branch_exec+'.zip'
     if(COMPONENT == "frontend1") {
-        command="zip -r ${COMPONENT}.zip node_modules server.js"
+        command="zip -r ${COMPONENT}.zip .*"
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
     } else if(COMPONENT == "login1") {
@@ -24,7 +24,7 @@ def make_artifacts(COMPONENT) {
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
     } else if(COMPONENT == "todo1") {
-        command="zip -r ${COMPONENT}.zip node_modules server.js"
+        command="zip -r ${COMPONENT}.zip .*"
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
     }
