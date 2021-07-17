@@ -22,7 +22,7 @@ def call(Map params = [:]) {
                 steps{
                     script{
                         build=new nexus()
-                        build.code_build("${APP_TYPE}", "${COMPONENT}")
+                        build.code_build("${COMPONENT}")
                     }
                 }
             }
@@ -30,7 +30,7 @@ def call(Map params = [:]) {
                 steps{
                     script{
                         prepare=new nexus()
-                        prepare.make_artifacts("${APP_TYPE}", "${COMPONENT}")
+                        prepare.make_artifacts("${COMPONENT}")
                     }
                 }
             }

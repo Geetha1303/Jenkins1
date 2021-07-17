@@ -7,7 +7,7 @@ def nexus(COMPONENT) {
     def execute_state=sh(returnStdout: true, script: command)
 }
 
-def make_artifacts(APP_TYPE, COMPONENT) {
+def make_artifacts(COMPONENT) {
     get_branch = "env | grep GIT_BRANCH | awk -F / '{print \$NF}'| xargs echo -n"
     def get_branch_exec=sh(returnStdout: true, script: get_branch)
     def FILENAME=COMPONENT+'-'+get_branch_exec+'.zip'
@@ -32,7 +32,7 @@ def make_artifacts(APP_TYPE, COMPONENT) {
     }
 }
 
-def code_build(APP_TYPE, COMPONENT) {
+def code_build(COMPONENT) {
     if(COMPONENT == "frontend1") {
         command="npm install"
         def execute_com=sh(returnStdout: true, script: command)
