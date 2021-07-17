@@ -32,7 +32,7 @@ def make_artifacts(COMPONENT) {
 
 def code_build(COMPONENT) {
     if (COMPONENT == "frontend1") {
-        command = "npm install && npm run build"
+        command = "npm install"
         def execute_com = sh(returnStdout: true, script: command)
         println(execute_com)
     } else if (COMPONENT == "users") {
