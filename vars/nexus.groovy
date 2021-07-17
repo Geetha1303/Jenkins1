@@ -13,6 +13,7 @@ def make_artifacts(APP_TYPE, COMPONENT) {
     def FILENAME=COMPONENT+'-'+get_branch_exec+'.zip'
     if(COMPONENT == "frontend1") {
         command="zip -r ${FILENAME} ."
+        println(command)
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
     } else if(COMPONENT == "login1") {
@@ -25,6 +26,7 @@ def make_artifacts(APP_TYPE, COMPONENT) {
         println(execute_com)
     } else if(COMPONENT == "todo1") {
         command="zip -r ${FILENAME} ."
+        println(command)
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
     }
