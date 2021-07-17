@@ -12,7 +12,7 @@ def make_artifacts(APP_TYPE, COMPONENT) {
     def get_branch_exec=sh(returnStdout: true, script: get_branch)
     def FILENAME=COMPONENT+'-'+get_branch_exec+'.zip'
     if(COMPONENT == "frontend1") {
-        command="zip -r ${FILENAME} ."
+        command="zip -r ${FILENAME} node_modules package.json"
         println(command)
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
