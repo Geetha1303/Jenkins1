@@ -16,8 +16,6 @@ def make_artifacts(COMPONENT) {
         println(command)
         def execute_com=sh(returnStdout: true, script: command)
         println(execute_com)
-        command1="rm -rf ${FILENAME}"
-        def execute_com1=sh(returnStdout: true, script: command1)
     } else if(COMPONENT == "login1") {
         command="zip -r ${FILENAME} main.go user.go tracing.go"
         println(command)
